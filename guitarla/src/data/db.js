@@ -1,4 +1,4 @@
-export const db = [
+const db = [
   {
       id: 1,
       name: 'Lukather',
@@ -84,3 +84,5 @@ export const db = [
       price: 379,
   },
 ]
+
+export default db;

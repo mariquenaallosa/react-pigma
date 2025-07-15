@@ -1,4 +1,10 @@
-function Header(){
+function Header(cart){
+   if (!Array.isArray(cart)) {
+    console.warn("Cart is not an array:", cart);
+    return null; // o un fallback
+  }
+
+
     return (
         <header className="py-5 header">
         <div className="container-xl">
@@ -27,11 +33,12 @@ function Header(){
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {cart.map((guitar)=>(
                                     <tr>
                                         <td>
                                             <img className="img-fluid" src="./public/img/guitarra_02.jpg" alt="imagen guitarra" />
                                         </td>
-                                        <td>SRV</td>
+                                        <td>{guitar.name}</td>
                                         <td className="fw-bold">
                                                 $299
                                         </td>
@@ -59,6 +66,7 @@ function Header(){
                                             </button>
                                         </td>
                                     </tr>
+                                    ))}
                                 </tbody>
                             </table>
 
